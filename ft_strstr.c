@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/19 15:06:23 by yuxu              #+#    #+#             */
-/*   Updated: 2017/11/20 20:31:26 by yuxu             ###   ########.fr       */
+/*   Created: 2017/11/20 19:26:56 by yuxu              #+#    #+#             */
+/*   Updated: 2017/11/20 20:12:22 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(const char *s)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int i;
+	int		i;
+	int		n;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	n = 0;
+	while (haystack[n])
+	{
+		i = 0;
+		while (needle[i] == haystack[n + i])
+		{
+			if (needle[i + 1] == '\0')
+			{
+				return ((char*)haystack + n);
+			}
+			i++;
+		}
+		n++;
+	}
+	return (0);
 }
