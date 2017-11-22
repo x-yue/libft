@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/19 15:06:23 by yuxu              #+#    #+#             */
-/*   Updated: 2017/11/22 21:54:54 by yuxu             ###   ########.fr       */
+/*   Created: 2017/11/22 21:51:13 by yuxu              #+#    #+#             */
+/*   Updated: 2017/11/22 21:53:31 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-size_t	ft_strlen(const char *s)
-{
-	int i;
+# include <stdlib.h>
+# include <string.h>
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#endif
