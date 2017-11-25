@@ -1,30 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 19:32:34 by yuxu              #+#    #+#             */
-/*   Updated: 2017/11/25 16:21:28 by yuxu             ###   ########.fr       */
+/*   Created: 2017/11/25 18:08:42 by yuxu              #+#    #+#             */
+/*   Updated: 2017/11/25 19:13:59 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, const char *src)
+#include <stdio.h>
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
 	int		i;
+	char	*s2;
 	int		n;
 
 	i = 0;
 	n = 0;
-	while (dest[i])
-		i++;
-	while (src[n])
+	while (s[i] && s[i] != c)
 	{
-		dest[i] = src[n];
 		i++;
-		n++;
+		while(s[i] == c && n < i)
+		{
+			while (n < i)
+			{
+				s2[n] = s[n];
+				n++;
+			}
+			return (s2);
+		}
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (NULL);
 }
+
+
+int		main(int ac, char **av)
+{
+	printf("%s\n", strchr(av[1], (av[2][0])));
+	printf("%s\n", ft_strchr(av[1], (av[2][0])));
+	return 0;
+}
+

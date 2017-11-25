@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 19:32:34 by yuxu              #+#    #+#             */
-/*   Updated: 2017/11/25 16:21:28 by yuxu             ###   ########.fr       */
+/*   Created: 2017/11/25 16:47:48 by yuxu              #+#    #+#             */
+/*   Updated: 2017/11/25 18:07:51 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, const char *src)
-{
-	int		i;
-	int		n;
+#include "libft.h"
 
-	i = 0;
-	n = 0;
-	while (dest[i])
-		i++;
-	while (src[n])
-	{
-		dest[i] = src[n];
-		i++;
-		n++;
-	}
-	dest[i] = '\0';
-	return (dest);
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
+{
+	int i;
+
+	if (size >= ft_strlen(dest))
+		i = ft_strlen(dest);
+	if (size < ft_strlen(dest))
+		i = size;
+	if (size == 0)
+		return (ft_strlen(src));
+	if (size > 0 && size <= ft_strlen(dest) + 2)
+		return (i + ft_strlen(src));
+	return (0);
 }
