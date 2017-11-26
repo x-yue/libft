@@ -6,11 +6,11 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 19:19:25 by yuxu              #+#    #+#             */
-/*   Updated: 2017/11/19 23:25:40 by yuxu             ###   ########.fr       */
+/*   Updated: 2017/11/26 21:36:30 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *s);
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {
