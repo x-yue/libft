@@ -6,22 +6,18 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/26 22:14:13 by yuxu              #+#    #+#             */
-/*   Updated: 2017/11/26 22:39:49 by yuxu             ###   ########.fr       */
+/*   Updated: 2017/11/27 21:09:54 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-/*
-void	*memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-*/
+	unsigned char *tmp;
 
-int		main(int ac, char **av)
-{
-	void	*s;
-	s = "1";
-	printf("%s\n", memset(s, av[1][0], av[2][0]));
-	return 0;
+	tmp = (unsigned char *)b;
+	while (len-- != 0)
+		*tmp++ = (unsigned char)c;
+	return (b);
 }
