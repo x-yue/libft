@@ -11,16 +11,21 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-/*
-void	*ft_memcpy(void		*dst, const void *src, size_t n)
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
+	int		i;
+	char	*src2;
+	char	*dst2;
 
-
-}
-*/
-
-int		main(void)
-{
-	
+	i = 0;
+	src2 = (char*)src;
+	dst2 = (char*)src;
+	while (n != 0)
+	{
+		dst2[i] = src2[i];
+		i++;
+		n--;
+	}
+	return (dst);
 }
