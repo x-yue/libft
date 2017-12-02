@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/19 20:38:25 by yuxu              #+#    #+#             */
-/*   Updated: 2017/12/02 04:31:51 by yuxu             ###   ########.fr       */
+/*   Created: 2017/12/02 00:01:50 by yuxu              #+#    #+#             */
+/*   Updated: 2017/12/02 00:11:43 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
+	const unsigned char	*s11;
+	const unsigned char	*s22;
+	int					i;
 
+	s11 = s1;
+	s22 = s2;
 	i = 0;
-	while (i < len && src[i])
+	while (n--)
 	{
-		dst[i] = (char)src[i];
-		i++;
+		if (s11[i] == s22[i])
+			i++;
+		if (s11[i] != s22[i])
+			return (s11[i] - s22[i]);
 	}
-	if (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (0);
 }

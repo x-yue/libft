@@ -6,7 +6,7 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 21:51:13 by yuxu              #+#    #+#             */
-/*   Updated: 2017/11/26 21:36:39 by yuxu             ###   ########.fr       */
+/*   Updated: 2017/12/02 05:17:55 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
 
 size_t	ft_strlen(const char *s);
 int		ft_atoi(const char *str);
@@ -25,7 +26,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 char	*ft_strcat(char *dest, char *src);
-size_t	ft_strlcat(char *dest, char *src, size_t size);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strdup(const char *s1);
 char	*ft_strcpy(char *dst, const char *src);
@@ -37,5 +38,7 @@ int		ft_toupper(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
 
 #endif
