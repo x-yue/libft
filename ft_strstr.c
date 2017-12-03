@@ -6,7 +6,7 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 19:26:56 by yuxu              #+#    #+#             */
-/*   Updated: 2017/11/20 20:12:22 by yuxu             ###   ########.fr       */
+/*   Updated: 2017/12/03 18:02:46 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	int		n;
 
 	n = 0;
+	if (!(needle[n]))
+		return ((char*)haystack);
 	while (haystack[n])
 	{
 		i = 0;

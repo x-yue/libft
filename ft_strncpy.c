@@ -6,7 +6,7 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 20:38:25 by yuxu              #+#    #+#             */
-/*   Updated: 2017/12/02 20:42:40 by yuxu             ###   ########.fr       */
+/*   Updated: 2017/12/03 18:31:21 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 		dst[i] = (char)src[i];
 		i++;
 	}
-	if (i < (int)len)
+	while (i < (int)len)
 	{
 		dst[i] = '\0';
 		i++;
