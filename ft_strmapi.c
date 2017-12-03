@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/02 19:40:09 by yuxu              #+#    #+#             */
-/*   Updated: 2017/12/02 20:24:18 by yuxu             ###   ########.fr       */
+/*   Created: 2017/12/02 23:09:48 by yuxu              #+#    #+#             */
+/*   Updated: 2017/12/02 23:27:24 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (*ap)
-		free(*ap);
-	*ap = NULL;
+	char	*str;
+	int		i;
+	char	*result;
+
+	i = 0;
+	str = (char*)s;
+	if (!(result = (char*)malloc(sizeof(char*) * (ft_strlen(str) + 1))))
+		return (NULL);
+	while (str[i])
+	{
+		result[i] = (*f)(i, str[i]);
+		i++;
+	}
+	return (result);
 }
