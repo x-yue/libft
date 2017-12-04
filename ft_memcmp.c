@@ -23,10 +23,10 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (n--)
 	{
-		if (s11[i] == s22[i])
-			i++;
 		if (s11[i] != s22[i])
 			return (s11[i] - s22[i]);
+		if (s11[i] == s22[i])
+			i++;
 	}
 	return (0);
 }

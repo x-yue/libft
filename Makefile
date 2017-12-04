@@ -16,7 +16,7 @@ SRCS = ft_*.c
 all: $(NAME)
 
 $(NAME):
-	gcc -g -c -Wall -Wextra -Werror $(SRCS)
+	gcc -c -Wall -Wextra -Werror $(SRCS)
 	ar rc $(NAME) *.o
 	ranlib $(NAME)
 
