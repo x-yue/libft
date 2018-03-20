@@ -6,19 +6,21 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/03 04:53:03 by yuxu              #+#    #+#             */
-/*   Updated: 2017/12/04 00:16:30 by yuxu             ###   ########.fr       */
+/*   Updated: 2018/03/19 18:04:55 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		word_count(char const *sentence, char splitter)
+static int		word_count(char const *sentence, char splitter)
 {
 	int i;
 	int nb_words;
 
 	i = 0;
 	nb_words = 0;
+	if (sentence == NULL)
+		return (0);
 	while (sentence[i])
 	{
 		while (sentence[i] == splitter && sentence[i])
@@ -32,13 +34,15 @@ int		word_count(char const *sentence, char splitter)
 	return (nb_words);
 }
 
-int		malloc_word(char **word, char const *sentence, char splitter,
+static int		malloc_word(char **word, char const *sentence, char splitter,
 					int counter)
 {
 	int word_starts_index;
 	int i;
 
 	word_starts_index = counter;
+	if (word == NULL || sentence == NULL)
+		return (0);
 	while (sentence[counter] != splitter && sentence[counter])
 		counter++;
 	if (!(*word =
@@ -54,7 +58,7 @@ int		malloc_word(char **word, char const *sentence, char splitter,
 	return (counter);
 }
 
-char	**ft_strsplit(char const *sentence, char splitter)
+char			**ft_strsplit(char const *sentence, char splitter)
 {
 	char	**fresh;
 	int		nb_words;
@@ -62,7 +66,8 @@ char	**ft_strsplit(char const *sentence, char splitter)
 	int		counter;
 
 	nb_words = word_count(sentence, splitter);
-	if (!(fresh = (char**)malloc(sizeof(char*) * nb_words + 1)))
+	if ((!(fresh = (char**)malloc(sizeof(char*) * nb_words + 1))) ||
+			sentence == NULL)
 		return (NULL);
 	counter = 0;
 	current_word = 0;

@@ -6,7 +6,7 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 16:42:00 by yuxu              #+#    #+#             */
-/*   Updated: 2017/11/26 21:36:00 by yuxu             ###   ########.fr       */
+/*   Updated: 2017/12/04 22:19:56 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	s2 = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (s1 == NULL)
+	if (s2 == NULL)
 		return (NULL);
 	while (s1[i])
 	{

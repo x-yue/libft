@@ -6,7 +6,7 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 23:18:23 by yuxu              #+#    #+#             */
-/*   Updated: 2017/12/02 23:26:26 by yuxu             ###   ########.fr       */
+/*   Updated: 2018/03/19 18:00:41 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
+	if (s1 == NULL || s2 == NULL)
+		return (0);
 	if (ft_strcmp(s1, s2) == 0)
 		return (1);
 	else

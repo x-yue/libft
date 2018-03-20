@@ -6,18 +6,18 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/03 03:17:11 by yuxu              #+#    #+#             */
-/*   Updated: 2017/12/03 04:48:18 by yuxu             ###   ########.fr       */
+/*   Updated: 2017/12/04 22:41:20 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*nbrrr(int nb, int len)
+static char		*nbrrr(int nb, int len)
 {
 	char	*str;
 	int		tmp;
 
-	if (!(str = (char*)malloc(sizeof(str) * (len + 1))))
+	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	str[len] = '\0';
 	tmp = nb;
@@ -34,7 +34,7 @@ char	*nbrrr(int nb, int len)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		m;
 	char	*str;
@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 	m = 1;
 	tmp = n;
 	if (n == -2147483648)
-		return ("-2147483648");
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
 		m++;
 	while (n /= 10)
