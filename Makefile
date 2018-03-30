@@ -6,7 +6,7 @@
 #    By: yuxu <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/02 03:41:02 by yuxu              #+#    #+#              #
-#    Updated: 2018/03/15 21:03:34 by yuxu             ###   ########.fr        #
+#    Updated: 2018/03/30 17:29:48 by yuxu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ FLAGS =            -Wall -Werror -Wextra
 
 COMPILED =      ft_atoi.o \
        ft_bzero.o \
-       ft_partlen.o \
        ft_isalnum.o \
        ft_isalpha.o \
        ft_isascii.o \
@@ -67,6 +66,18 @@ COMPILED =      ft_atoi.o \
        ft_putstr.o \
        ft_putnbr_fd.o \
        ft_putendl_fd.o \
+       ft_lstnew.o \
+       ft_lstdelone.o \
+       ft_lstdel.o \
+       ft_lstadd.o \
+       ft_lstiter.o \
+       ft_lstmap.o \
+       ft_partlen.o \
+       ft_swap.o \
+       ft_sort_int_tab.o \
+       ft_strrev.o \
+       ft_lcm.o \
+       ft_pgcd.o \
        ft_strdup.o
 
 all: $(NAME)

@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/02 18:36:11 by yuxu              #+#    #+#             */
-/*   Updated: 2018/03/22 04:15:25 by yuxu             ###   ########.fr       */
+/*   Created: 2018/03/22 00:58:11 by yuxu              #+#    #+#             */
+/*   Updated: 2018/03/22 02:14:47 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+/*
+**first to add alst to the back to the "new" list, so "new" is at the beginning
+*/
+
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	write(fd, &c, 1);
+	if (!alst || !new)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

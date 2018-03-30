@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lcm.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/02 18:36:11 by yuxu              #+#    #+#             */
-/*   Updated: 2018/03/22 04:15:25 by yuxu             ###   ########.fr       */
+/*   Created: 2018/03/22 20:53:03 by yuxu              #+#    #+#             */
+/*   Updated: 2018/03/22 21:03:01 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+unsigned int	ft_lcm(unsigned int a, unsigned int b)
 {
-	write(fd, &c, 1);
+	unsigned int i;
+
+	if (a <= 0 || b <= 0)
+		return (0);
+	if (a >= b)
+		i = a;
+	if (a <= b)
+		i = b;
+	while (i % a != 0 || i % b != 0)
+		i++;
+	return (i);
 }

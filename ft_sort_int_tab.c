@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/02 18:36:11 by yuxu              #+#    #+#             */
-/*   Updated: 2018/03/22 04:15:25 by yuxu             ###   ########.fr       */
+/*   Created: 2018/03/22 04:58:08 by yuxu              #+#    #+#             */
+/*   Updated: 2018/03/30 17:28:57 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_sort_int_tab(int *tab, unsigned int size)
 {
-	write(fd, &c, 1);
+	unsigned int	i;
+	unsigned int	j;
+
+	if (tab == 0 || size == 0)
+		return ;
+	i = 0;
+	while (tab[i])
+		i++;
+	if (size > i)
+		size = i;
+	i = 0;
+	j = 1;
+	while (i < size - 1 && j < size && tab[j] && tab[i])
+	{
+		while (j < size)
+		{
+			if (tab[i] > tab[j])
+				ft_swap(&tab[i], &tab[j]);
+			j++;
+		}
+		i++;
+		j = i + 1;
+	}
 }

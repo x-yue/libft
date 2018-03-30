@@ -6,7 +6,7 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 21:51:13 by yuxu              #+#    #+#             */
-/*   Updated: 2018/03/20 19:19:34 by yuxu             ###   ########.fr       */
+/*   Updated: 2018/03/30 17:29:37 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,16 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				*ft_itoa(int n);
 char				**ft_strsplit(char const *s, char c);
+t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_swap(int *a, int *b);
+void				ft_sort_int_tab(int *tab, unsigned int size);
+char				*ft_strrev(char *str);
+unsigned int		ft_lcm(unsigned int a, unsigned int b);
+unsigned int		ft_pgcd(unsigned int first, unsigned int second);
 
 #endif
