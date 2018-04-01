@@ -6,7 +6,7 @@
 #    By: yuxu <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/02 03:41:02 by yuxu              #+#    #+#              #
-#    Updated: 2018/03/30 17:29:48 by yuxu             ###   ########.fr        #
+#    Updated: 2018/04/01 03:36:16 by yuxu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,8 @@ COMPILED =      ft_atoi.o \
        ft_strrev.o \
        ft_lcm.o \
        ft_pgcd.o \
+       ft_split_keep_blanc.o \
+       ft_index.o \
        ft_strdup.o
 
 all: $(NAME)

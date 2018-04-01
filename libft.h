@@ -6,7 +6,7 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 21:51:13 by yuxu              #+#    #+#             */
-/*   Updated: 2018/03/30 17:29:37 by yuxu             ###   ########.fr       */
+/*   Updated: 2018/04/01 03:36:43 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,7 @@ void				ft_sort_int_tab(int *tab, unsigned int size);
 char				*ft_strrev(char *str);
 unsigned int		ft_lcm(unsigned int a, unsigned int b);
 unsigned int		ft_pgcd(unsigned int first, unsigned int second);
+char				**ft_split_keep_blanc(char const *s, char c);
+int					ft_index(char *str, char c);
 
 #endif

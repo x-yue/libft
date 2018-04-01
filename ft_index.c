@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_index.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 04:58:08 by yuxu              #+#    #+#             */
-/*   Updated: 2018/04/01 03:04:55 by yuxu             ###   ########.fr       */
+/*   Created: 2018/04/01 03:34:03 by yuxu              #+#    #+#             */
+/*   Updated: 2018/04/01 04:18:01 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_sort_int_tab(int *tab, unsigned int size)
-{
-	unsigned int	i;
-	unsigned int	j;
+/*
+**this fonction gives the index number of which c occurs
+**if c doesn't occur in the str, it returns -1 as indication.
+*/
 
-	if (tab == 0 || size == 0)
-		return ;
-	i = 0;
-	while (tab[i])
-		i++;
-	if (size > i)
-		size = i;
-	i = 0;
-	j = 1;
-	while (i < size - 1 && j < size && tab[j] && tab[i])
-	{
-		while (j < size)
-		{
-			if (tab[i] > tab[j])
-				ft_swap(&tab[i], &tab[j]);
-			j++;
-		}
-		i++;
-		j = i + 1;
-	}
+int		ft_index(char *str, char c)
+{
+	int index;
+
+	if (str == NULL)
+		return (0);
+	index = 0;
+	while (str[index] && str[index] != c)
+		index++;
+	if (index == (int)ft_strlen(str) && str[index] != c)
+		index = -1;
+	return (index);
 }
