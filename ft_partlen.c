@@ -6,18 +6,18 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 20:37:52 by yuxu              #+#    #+#             */
-/*   Updated: 2018/03/19 18:32:18 by yuxu             ###   ########.fr       */
+/*   Updated: 2018/04/03 12:47:45 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_partlen(const char *s, int i, char c)
+size_t	ft_partlen(const char *s, unsigned int i, char c)
 {
-	int a;
+	unsigned int a;
 
 	a = i;
-	if (s == NULL)
+	if (s == NULL || i > (unsigned int)ft_strlen(s))
 		return (0);
 	while (s[a] != c)
 		a++;

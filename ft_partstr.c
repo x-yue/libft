@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_partial.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/19 15:06:23 by yuxu              #+#    #+#             */
-/*   Updated: 2018/04/01 22:21:13 by yuxu             ###   ########.fr       */
+/*   Created: 2018/04/03 12:23:03 by yuxu              #+#    #+#             */
+/*   Updated: 2018/04/03 12:49:32 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_partstr(char *str, unsigned int i, char c)
 {
-	int i;
+	int		a;
+	char	*part;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	a = 0;
+	if (str == NULL || i > (unsigned int)ft_strlen(str))
+		return (NULL);
+	if (!(part = (char*)malloc(sizeof(char) * ft_partlen(str, i, c) + 1)))
+		return (NULL);
+	if (str[i] == '\0')
+		return ("");
+	while (str[i] != c)
+		part[a++] = str[i++];
+	part[a] = 0;
+	return (part);
 }

@@ -6,7 +6,7 @@
 /*   By: yuxu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 21:51:13 by yuxu              #+#    #+#             */
-/*   Updated: 2018/04/01 03:36:43 by yuxu             ###   ########.fr       */
+/*   Updated: 2018/04/03 14:02:30 by yuxu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include "../get_next_line.h"
 
 typedef	struct		s_list
 {
@@ -24,7 +25,7 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-size_t				ft_partlen(const char *s, int i, char c);
+size_t				ft_partlen(const char *s, unsigned int i, char c);
 size_t				ft_strlen(const char *s);
 int					ft_atoi(const char *str);
 char				*ft_strncat(char *dest, const char *src, size_t n);
@@ -91,5 +92,10 @@ unsigned int		ft_lcm(unsigned int a, unsigned int b);
 unsigned int		ft_pgcd(unsigned int first, unsigned int second);
 char				**ft_split_keep_blanc(char const *s, char c);
 int					ft_index(char *str, char c);
+int					get_next_line(int const fd, char **line);
+int					ft_read(int fd, char **line, int loc);
+void				ft_store(char *str, char **res, char **line, int loc);
+char				*ft_partstr(char *str, unsigned int i, char c);
+char				*ft_strmove(char *str, size_t len);
 
 #endif
